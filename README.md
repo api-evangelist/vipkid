@@ -64,5 +64,19 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-VIPKid is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+VIPKid (Beijing Dami Technology Co., Ltd. / 北京大米科技有限公司) is an online language-education
+company founded in 2013 that connects children with English teachers over one-to-one live video
+lessons, and runs a global teacher-marketplace side (VIPTeacher) alongside consumer learning brands
+including Lingo Bus, VIPKID AI 双师智学, VIPKID 国际教育 and the Dino parent-child reading rooms.
+
+**VIPKid publishes no public API.** A full contract-discovery pass on 2026-09-04 probed
+`/openapi.json`, `/swagger.json`, `/api-docs`, `/graphql`, the MCP and A2A well-known paths and the
+RFC 8615 well-known list across nine VIPKid and VIPTeacher hosts, plus npm, PyPI, RubyGems,
+crates.io, NuGet, Maven Central, pkg.go.dev and CocoaPods. No developer portal, API reference,
+OpenAPI, GraphQL SDL, AsyncAPI, gRPC/Protobuf, WSDL, MCP server, agent card or well-known document
+exists on any of them. See `apis.yml` `x-coverage` for the evidence.
+
+- Website: https://www.vipkid.com/
+- Website (mainland China): https://www.vipkid.com.cn/
+- Teacher marketplace: https://www.vipteacher.com/
+- Open source: https://github.com/VIPKID-OpenSource

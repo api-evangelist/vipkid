@@ -1,0 +1,122 @@
+generated: '2026-09-04'
+method: searched
+source: >-
+  https://www.vipkid.com.cn/ (homepage security section) and
+  https://www.vipkid.com.cn/inforcertification (VIPKID 信息安全 certification page),
+  both fetched 2026-09-04.
+provider: VIPKid
+summary: >-
+  VIPKid publishes no API contract, so there is no spec to test any technical
+  conformance against — every API-side entry below is `conforms: false` on the grounds
+  that the surface does not exist, not that it fails. What VIPKid DOES publish is a
+  corporate information-security compliance claim: a dedicated 信息安全 (information
+  security) page and a homepage assertion of ISO information-security management-system
+  certification. That claim is recorded here with its evidence, and with the caveat that
+  it is not independently machine-verifiable.
+compliance:
+  published: true
+  page: https://www.vipkid.com.cn/inforcertification
+  page_status: 200
+  page_note: >-
+    The page renders a single JPEG certificate scan
+    (s.vipkidstatic.com/fe-static/pc/parents/img/vkindex/sanjirenzheng2018-e42246cef0.jpg)
+    and carries no machine-readable text at all — no certificate number, no issuing body,
+    no standard name, no validity dates in the HTML. The filename ("sanjirenzheng2018",
+    三级认证 2018) indicates a 2018 China MLPS / 等级保护 Level 3 classified-protection
+    certificate, but that is an inference from a file name and is NOT recorded as a
+    confirmed certification.
+  certifications:
+  - name: ISO information security management system
+    standard_family: ISO/IEC 27001 (family named only as "ISO" by the provider)
+    claimed: true
+    verified: false
+    evidence: https://www.vipkid.com.cn/
+    evidence_status: 200
+    quote: 安全保护体系 保障数据安全，运营安全，通过ISO信息安全管理体系认证的在线教育企业
+    note: >-
+      Homepage prose claim only. No certificate number, registrar, scope statement or
+      expiry is published anywhere on the site, and no trust centre exists, so the claim
+      cannot be checked against a certification register.
+  third_party_seals:
+  - name: iTrust 可信网站认证
+    url: http://www.itrust.org.cn/Home/Index/wx_certifi/wm/1805016993
+    status: 000
+    note: linked from the .com.cn footer; the issuing registry did not respond (timeout).
+  - name: 315 诚信档案
+    url: http://www.315online.com.cn/member/315150028.html
+    status: 500
+    note: linked from the .com.cn footer; the issuing registry returns a server error.
+  soc2: null
+  iso27001: claimed-unverified
+  pci_dss: null
+  hipaa: null
+  fedramp: null
+  gdpr_statement: https://www.vipkid.com/landing/teach-privacy-policy
+conformance:
+- id: oauth2
+  conforms: false
+  evidence: >-
+    No OAuth surface. /.well-known/oauth-authorization-server returns 302-to-Akamai-DCV or
+    404 on all nine VIPKid/VIPTeacher hosts probed (well-known/vipkid-well-known.yml).
+- id: oidc
+  conforms: false
+  evidence: >-
+    /.well-known/openid-configuration returns no document on any host
+    (well-known/vipkid-well-known.yml).
+- id: rfc9457
+  conforms: false
+  evidence: No published API contract, so no error envelope is documented.
+- id: rfc9116
+  conforms: false
+  evidence: >-
+    No security.txt is served. www.vipkid.com/.well-known/security.txt 302s to
+    http://dcv.akamai.com/.well-known/security.txt (an Akamai domain-control-validation
+    catch-all, which itself 503s); www.vipteacher.com returns 404.
+- id: rfc8615
+  conforms: false
+  evidence: 81 host/path well-known probes, zero documents served.
+- id: openapi
+  conforms: false
+  evidence: >-
+    /openapi.json, /swagger.json, /api-docs and /v1/openapi.json probed on
+    www.vipkid.com, vipkid.com, m.vipkid.com, www.vipkid.com.cn, www.vipteacher.com,
+    teach.vipteacher.com, api.vipkid.com, api.vipkid.com.cn and open.vipkid.com.cn —
+    404, 502 or an HTML 404 shell everywhere.
+- id: graphql
+  conforms: false
+  evidence: No /graphql surface found on any VIPKid host.
+- id: asyncapi
+  conforms: false
+  evidence: No event, streaming or webhook surface is documented anywhere on the site.
+- id: mcp
+  conforms: false
+  evidence: No hosted MCP endpoint and no stdio package; see mcp/vipkid-mcp.yml.
+- id: a2a
+  conforms: false
+  evidence: >-
+    /.well-known/agent-card.json and /.well-known/agent.json probed on all nine hosts —
+    no 200 carrying a JSON AgentCard.
+domain_standards:
+  market: online language education / EdTech
+  note: >-
+    The education market has real interchange standards a platform of this shape could
+    declare — 1EdTech LTI, OneRoster, Caliper Analytics, QTI, Ed-Fi. VIPKid declares none
+    of them, and it has no contract in which such a declaration could appear. This is
+    recorded as absent, not as a failure: reward-only, and a direct-to-consumer tutoring
+    platform with no institutional-integration surface has no obligation to speak them.
+  checked:
+  - id: 1edtech-lti
+    conforms: false
+    evidence: no LTI launch endpoint, tool configuration, or mention in the docs surface.
+  - id: 1edtech-oneroster
+    conforms: false
+    evidence: no roster/enrollment API published.
+  - id: 1edtech-caliper
+    conforms: false
+    evidence: no learning-analytics event surface published.
+  - id: 1edtech-qti
+    conforms: false
+    evidence: no assessment interchange surface published.
+  - id: ed-fi
+    conforms: false
+    evidence: no Ed-Fi ODS/API surface published.

@@ -1,0 +1,37 @@
+generated: '2026-09-04'
+method: probed
+source: >-
+  Web search for a VIPKid MCP server plus direct probes of /.well-known/ai-plugin.json,
+  /mcp and the npm registry on 2026-09-04.
+provider: VIPKid
+status: none
+summary: >-
+  VIPKid ships no MCP server, hosted or local, and there is nothing to derive a candidate
+  tool list from: the company publishes no OpenAPI, no GraphQL schema and no REST
+  reference of any kind. No `MCPServer` pointer is wired into apis.yml — a manifest that
+  records the absence of a server must not be scored as a server.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: probed
+tools: []
+tool_count: 0
+evidence:
+- url: https://www.vipkid.com/.well-known/ai-plugin.json
+  status: 502
+- url: https://www.vipkid.com.cn/.well-known/ai-plugin.json
+  status: 302
+  note: redirects to the Akamai domain-control-validation catch-all, not a document.
+- url: https://www.vipteacher.com/.well-known/ai-plugin.json
+  status: 404
+- url: https://registry.npmjs.org/-/v1/search?text=vipkid
+  status: 200
+  note: >-
+    21 results, none an MCP server — the VIPKid-attributable packages are a courseware
+    engine, an app bridge, logging and upload helpers (see packages/vipkid-packages.yml).
+derivation_blocked_by: >-
+  No OpenAPI or GraphQL contract exists in this repo or on any VIPKid host, so a
+  status:candidate tool list cannot be derived without inventing operations.

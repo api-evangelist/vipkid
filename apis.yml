@@ -1,17 +1,31 @@
 aid: vipkid
 name: VIPKid
-description: 'VIPKid is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'VIPKid (Beijing Dami Technology Co., Ltd. / 北京大米科技有限公司) is an online
+  language-education company founded in 2013 that connects children with English teachers
+  over one-to-one live video lessons, and runs a global teacher-marketplace side (VIPTeacher)
+  alongside consumer learning brands including Lingo Bus, VIPKID AI 双师智学, VIPKID 国际教育
+  and the Dino parent-child reading rooms. The product is delivered entirely as consumer
+  web and mobile apps and a teacher portal; VIPKid publishes no public developer program,
+  API reference, or machine-readable contract of any kind.'
 url: https://raw.githubusercontent.com/api-evangelist/vipkid/refs/heads/main/apis.yml
+image: https://img.vipkidstatic.com/teacher/FBShare_Image_1200x630.png
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-09-04'
 modified: '2026-09-04'
+position: Producing
 tags:
 - Company
+- Education
+- EdTech
+- Online Learning
+- Language Learning
+- English Language Teaching
+- Tutoring
+- K-12
+- Consumer
+- China
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +33,61 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/vipkid-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.vipkid.com/
+- type: About
+  url: https://www.vipkid.com/mkt/about-us
+- type: Support
+  url: https://www.vipkid.com/mkt/contact-us
+- type: SignUp
+  url: https://www.vipkid.com/mkt/sign-up
+- type: Login
+  url: https://www.vipkid.com/login
+- type: TermsOfService
+  url: https://www.vipkid.com/landing/teach-terms-of-use
+- type: PrivacyPolicy
+  url: https://www.vipkid.com/landing/teach-privacy-policy
+- type: GitHubOrganization
+  url: https://github.com/VIPKID-OpenSource
+- type: Packages
+  url: packages/vipkid-packages.yml
+- type: Conformance
+  url: conformance/vipkid-conformance.yml
+- type: Compliance
+  url: conformance/vipkid-conformance.yml
+- type: LLMsTxt
+  url: llms/vipkid-llms.txt
+- type: Plans
+  url: plans/vipkid-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/vipkid-rate-limits.yml
+x-enrichment:
+  date: '2026-09-04'
+  status: minimal
+  artifacts_added: 8
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    VIPKid ships only consumer apps and a teacher portal — there is no developer
+    subdomain at all (developer/docs/developers/openapi .vipkid.com and .vipkid.com.cn
+    all fail to resolve), /openapi.json and /swagger.json return 404 or 502 on all nine
+    VIPKid and VIPTeacher hosts, and every /.well-known/* request on the main domains is
+    302'd to Akamai's domain-control-validation host rather than answered with a document.
+  evidence:
+  - url: https://api.vipkid.com/openapi.json
+    status: 404
+  - url: https://www.vipkid.com/openapi.json
+    status: 502
+  - url: https://www.vipkid.com/.well-known/security.txt
+    status: 302
+  - url: https://www.vipteacher.com/.well-known/agent-card.json
+    status: 404
+  - url: https://open.vipkid.com.cn/swagger.json
+    status: 404
+  - url: https://blog.vipkid.com/
+    status: 500
+  checked: '2026-09-04'

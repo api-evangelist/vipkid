@@ -1,0 +1,315 @@
+generated: '2026-09-04'
+method: probed
+source: live HTTPS probe of the RFC 8615 well-known path list on every VIPKid / VIPTeacher host the record
+  knows
+provider: VIPKid
+summary: No well-known document is served on ANY VIPKid host. Not one of the 81 host/path probes below
+  returned a 200 carrying a document. On vipkid.com, www.vipkid.com, m.vipkid.com and www.vipkid.com.cn
+  the edge answers every /.well-known/* request with a 302 to http://dcv.akamai.com/.well-known/security.txt
+  — an Akamai domain-control-validation catch-all, not a document VIPKid publishes. The vipteacher.com
+  and api.* hosts return a plain 404. No security.txt, no OpenID/OAuth metadata, no api-catalog, no ai-plugin.json,
+  no agent card. No WellKnown or SecurityTxt pointer is emitted in apis.yml, because a recorded absence
+  must not be scored as a presence.
+hosts:
+- host: vipkid.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    file: null
+    redirect_to: https://www.vipkid.com/.well-known/security.txt
+  - path: /.well-known/openid-configuration
+    status: 301
+    file: null
+    redirect_to: https://www.vipkid.com/.well-known/openid-configuration
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+    file: null
+    redirect_to: https://www.vipkid.com/.well-known/oauth-authorization-server
+  - path: /.well-known/oauth-protected-resource
+    status: 301
+    file: null
+    redirect_to: https://www.vipkid.com/.well-known/oauth-protected-resource
+  - path: /.well-known/api-catalog
+    status: 301
+    file: null
+    redirect_to: https://www.vipkid.com/.well-known/api-catalog
+  - path: /.well-known/ai-plugin.json
+    status: 301
+    file: null
+    redirect_to: https://www.vipkid.com/.well-known/ai-plugin.json
+  - path: /.well-known/agent-card.json
+    status: 301
+    file: null
+    redirect_to: https://www.vipkid.com/.well-known/agent-card.json
+  - path: /.well-known/agent.json
+    status: 301
+    file: null
+    redirect_to: https://www.vipkid.com/.well-known/agent.json
+  - path: /.well-known/aauth-resource.json
+    status: 301
+    file: null
+    redirect_to: https://www.vipkid.com/.well-known/aauth-resource.json
+- host: www.vipkid.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 302
+    file: null
+    redirect_to: http://dcv.akamai.com/.well-known/security.txt
+  - path: /.well-known/openid-configuration
+    status: 302
+    file: null
+    redirect_to: http://dcv.akamai.com/.well-known/openid-configuration
+  - path: /.well-known/oauth-authorization-server
+    status: 302
+    file: null
+    redirect_to: http://dcv.akamai.com/.well-known/oauth-authorization-server
+  - path: /.well-known/oauth-protected-resource
+    status: 302
+    file: null
+    redirect_to: http://dcv.akamai.com/.well-known/oauth-protected-resource
+  - path: /.well-known/api-catalog
+    status: 302
+    file: null
+    redirect_to: http://dcv.akamai.com/.well-known/api-catalog
+  - path: /.well-known/ai-plugin.json
+    status: 502
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 502
+    file: null
+  - path: /.well-known/agent.json
+    status: 502
+    file: null
+  - path: /.well-known/aauth-resource.json
+    status: 502
+    file: null
+- host: m.vipkid.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 302
+    file: null
+    redirect_to: http://dcv.akamai.com/.well-known/security.txt
+  - path: /.well-known/openid-configuration
+    status: 302
+    file: null
+    redirect_to: http://dcv.akamai.com/.well-known/openid-configuration
+  - path: /.well-known/oauth-authorization-server
+    status: 302
+    file: null
+    redirect_to: http://dcv.akamai.com/.well-known/oauth-authorization-server
+  - path: /.well-known/oauth-protected-resource
+    status: 302
+    file: null
+    redirect_to: http://dcv.akamai.com/.well-known/oauth-protected-resource
+  - path: /.well-known/api-catalog
+    status: 302
+    file: null
+    redirect_to: http://dcv.akamai.com/.well-known/api-catalog
+  - path: /.well-known/ai-plugin.json
+    status: 502
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 502
+    file: null
+  - path: /.well-known/agent.json
+    status: 502
+    file: null
+  - path: /.well-known/aauth-resource.json
+    status: 502
+    file: null
+- host: www.vipkid.com.cn
+  documents:
+  - path: /.well-known/security.txt
+    status: 302
+    file: null
+    redirect_to: http://dcv.akamai.com/.well-known/security.txt
+  - path: /.well-known/openid-configuration
+    status: 302
+    file: null
+    redirect_to: http://dcv.akamai.com/.well-known/openid-configuration
+  - path: /.well-known/oauth-authorization-server
+    status: 302
+    file: null
+    redirect_to: http://dcv.akamai.com/.well-known/oauth-authorization-server
+  - path: /.well-known/oauth-protected-resource
+    status: 302
+    file: null
+    redirect_to: http://dcv.akamai.com/.well-known/oauth-protected-resource
+  - path: /.well-known/api-catalog
+    status: 302
+    file: null
+    redirect_to: http://dcv.akamai.com/.well-known/api-catalog
+  - path: /.well-known/ai-plugin.json
+    status: 302
+    file: null
+    redirect_to: http://dcv.akamai.com/.well-known/ai-plugin.json
+  - path: /.well-known/agent-card.json
+    status: 302
+    file: null
+    redirect_to: http://dcv.akamai.com/.well-known/agent-card.json
+  - path: /.well-known/agent.json
+    status: 302
+    file: null
+    redirect_to: http://dcv.akamai.com/.well-known/agent.json
+  - path: /.well-known/aauth-resource.json
+    status: 302
+    file: null
+    redirect_to: http://dcv.akamai.com/.well-known/aauth-resource.json
+- host: vipkid.com.cn
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    file: null
+    redirect_to: http://www.vipkid.com.cn/.well-known/security.txt
+  - path: /.well-known/openid-configuration
+    status: 301
+    file: null
+    redirect_to: http://www.vipkid.com.cn/.well-known/openid-configuration
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+    file: null
+    redirect_to: http://www.vipkid.com.cn/.well-known/oauth-authorization-server
+  - path: /.well-known/oauth-protected-resource
+    status: 301
+    file: null
+    redirect_to: http://www.vipkid.com.cn/.well-known/oauth-protected-resource
+  - path: /.well-known/api-catalog
+    status: 301
+    file: null
+    redirect_to: http://www.vipkid.com.cn/.well-known/api-catalog
+  - path: /.well-known/ai-plugin.json
+    status: 301
+    file: null
+    redirect_to: http://www.vipkid.com.cn/.well-known/ai-plugin.json
+  - path: /.well-known/agent-card.json
+    status: 301
+    file: null
+    redirect_to: http://www.vipkid.com.cn/.well-known/agent-card.json
+  - path: /.well-known/agent.json
+    status: 301
+    file: null
+    redirect_to: http://www.vipkid.com.cn/.well-known/agent.json
+  - path: /.well-known/aauth-resource.json
+    status: 301
+    file: null
+    redirect_to: http://www.vipkid.com.cn/.well-known/aauth-resource.json
+- host: www.vipteacher.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /.well-known/aauth-resource.json
+    status: 404
+    file: null
+- host: teach.vipteacher.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /.well-known/aauth-resource.json
+    status: 404
+    file: null
+- host: api.vipkid.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /.well-known/aauth-resource.json
+    status: 404
+    file: null
+- host: api.vipkid.com.cn
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /.well-known/aauth-resource.json
+    status: 404
+    file: null
+totals:
+  hosts_probed: 9
+  paths_per_host: 9
+  documents_served: 0

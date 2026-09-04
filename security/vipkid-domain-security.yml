@@ -1,0 +1,64 @@
+generated: '2026-09-04'
+method: probed
+source: live DNS/TLS/HTTP probes of every VIPKid / VIPTeacher host in apis.yml and named by the site's
+  own markup
+provider: VIPKid
+summary: 'All six VIPKid / VIPTeacher hosts serve HTTPS with a valid certificate — the two Nuxt
+  marketing hosts negotiate TLS 1.3, the four behind the Akamai/Tengine edge negotiate TLS 1.2 — but
+  the wider domain posture is thin: not one host sets HSTS, none of the three registrable domains is
+  DNSSEC-signed, none publishes a CAA record, and vipkid.com has SPF but no DMARC record at all.
+  vipkid.com.cn (p=quarantine) and vipteacher.com (p=none) do publish DMARC. Absence of a record here
+  is an observed fact, not a failed lookup.'
+hosts:
+- host: www.vipkid.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 26 05:53:40 2026 GMT
+  hsts: false
+- host: vipkid.com
+  https: true
+  tls_version: TLSv1.2
+  cert_expires: Feb 16 23:59:59 2027 GMT
+  hsts: false
+- host: m.vipkid.com
+  https: true
+  tls_version: TLSv1.2
+  cert_expires: Feb 16 23:59:59 2027 GMT
+  hsts: false
+- host: www.vipkid.com.cn
+  https: true
+  tls_version: TLSv1.2
+  cert_expires: Feb 16 23:59:59 2027 GMT
+  hsts: false
+- host: www.vipteacher.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Mar  4 23:59:59 2027 GMT
+  hsts: false
+- host: teach.vipteacher.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Mar  4 23:59:59 2027 GMT
+  hsts: false
+domains:
+- domain: vipkid.com
+  dnssec: false
+  caa: []
+  spf: true
+  spf_record: '"v=spf1 +include:_netblocks.m.feishu.cn -all"'
+  dmarc: false
+  dmarc_record: null
+- domain: vipkid.com.cn
+  dnssec: false
+  caa: []
+  spf: true
+  spf_record: '"v=spf1 include:spf.qiye.163.com -all"'
+  dmarc: true
+  dmarc_record: '"v=DMARC1; p=quarantine; fo=1; ruf=mailto:dmarc@qiye.163.com; rua=mailto:dmarc_report@qiye.163.com"'
+- domain: vipteacher.com
+  dnssec: false
+  caa: []
+  spf: true
+  spf_record: '"v=spf1 include:mailgun.org ~all"'
+  dmarc: true
+  dmarc_record: '"v=DMARC1; p=none; rua=dmarc-reports@vipteacher.com"'

@@ -1,0 +1,39 @@
+generated: '2026-09-04'
+method: searched
+source: >-
+  https://www.vipkid.com/teach, https://www.vipkid.com/teach/teacher-pay,
+  https://www.vipkid.com/mkt/faq/about-vipkid and https://www.vipkid.com.cn/ — fetched
+  2026-09-04. No pricing or plans page exists on any VIPKid host.
+provider: VIPKid
+plan_count: 0
+summary: >-
+  VIPKid publishes no API and therefore no API plans, tiers, quotas or overage terms.
+  It also publishes no consumer course pricing: the mainland-China site routes the
+  "课程价格" (course price) control to a JavaScript handler that opens a lead-capture form,
+  and the buying path is a free trial lesson followed by a quote from an assigned course
+  consultant (专属课程顾问). The only published monetary figures on the site are
+  teacher-side earnings, not customer prices.
+plans: []
+published_rates:
+- audience: teachers (supply side, not an API plan)
+  figure: USD 14–22 per hour base, USD 15.6–28.4 per hour including incentives
+  source: https://www.vipkid.com/teach
+  source_status: 200
+  note: >-
+    Recorded for completeness only. This is compensation paid to contract teachers, not a
+    price a customer or an API consumer pays, and it is not a plan.
+consumer_pricing:
+  published: false
+  mechanism: free trial lesson, then a quote from an assigned course consultant
+  evidence:
+  - url: https://www.vipkid.com.cn/
+    status: 200
+    note: >-
+      "注册免费领取试听课 … 您的专属课程顾问会及时与您联络" — register for a free trial lesson,
+      your dedicated course consultant will contact you.
+  - url: https://www.vipkid.com/mkt/faq/about-vipkid
+    status: 200
+    note: FAQ carries no price table.
+api_pricing:
+  published: false
+  reason: no public API exists

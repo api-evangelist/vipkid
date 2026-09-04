@@ -1,0 +1,32 @@
+generated: '2026-09-04'
+method: searched
+source: >-
+  Full docs-surface search across www.vipkid.com, www.vipkid.com.cn, www.vipteacher.com
+  and teach.vipteacher.com on 2026-09-04. No API reference exists in which limits could
+  be published.
+provider: VIPKid
+limit_count: 0
+summary: >-
+  No rate limits are documented, because no public API is documented. There is no API
+  reference, no developer portal and no machine-readable contract on any VIPKid host, so
+  there is no published throttle, quota, burst allowance, exhaustion status code or
+  rate-limit response header to record. This is an honest zero, not an unchecked field.
+rate_limits: []
+response_headers:
+  observed: []
+  note: >-
+    No unauthenticated VIPKid API endpoint could be called to observe headers. The only
+    API-shaped host referenced by the site's own JavaScript is
+    https://merlin-tl.vipkid.com.cn/api/experiment/treatment, an internal A/B-testing
+    endpoint used by the web app; it returns 502 to an anonymous GET and is neither
+    documented nor offered to third parties, so it is not registered as an API here.
+exhaustion:
+  status_code: null
+  retry_after: null
+evidence:
+- url: https://www.vipkid.com/mkt/faq/about-vipkid
+  status: 200
+- url: https://merlin-tl.vipkid.com.cn/robots.txt
+  status: 502
+- url: https://api.vipkid.com/openapi.json
+  status: 404

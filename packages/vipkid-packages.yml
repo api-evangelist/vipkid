@@ -1,0 +1,233 @@
+generated: '2026-09-04'
+method: searched
+source: >-
+  registry.npmjs.org metadata endpoints, api.github.com for the VIPKID-OpenSource org,
+  and trunk.cocoapods.org; PyPI, RubyGems, crates.io, NuGet, Maven Central and
+  pkg.go.dev were checked and hold nothing published by VIPKid.
+provider: VIPKid
+summary: >-
+  VIPKid publishes NO API client SDK, because it publishes no API. What it has published
+  is a small set of first-party open-source front-end and mobile libraries — a
+  Pixi.js-based interactive-courseware engine (VF / vf-gui) used to build its live
+  classroom, an HTTPDNS client for its Android and iOS apps, and internal bridge/logging/
+  upload helpers pushed to npm by individual VIPKid engineers. Every one of them is
+  a client-side utility, NOT a wrapper around a VIPKid API, so no `SDKs` pointer is
+  wired into apis.yml: sdk_count must not be credited for libraries that call no API.
+  The whole set is also abandoned — the newest release in the table is 2021-07-17 and
+  the median is 2019, and the GitHub organization that hosted the VF engine
+  (github.com/vipkid-edu) now returns 404, so the npm `repository` links on the
+  engine packages are dead.
+sdk_count: 0
+sdk_note: >-
+  Zero first-party API client libraries exist. package_count below counts open-source
+  utility libraries only.
+package_count: 16
+packages:
+- name: vf-gui
+  registry: npm
+  url: https://www.npmjs.com/package/vf-gui
+  version: 1.1.21
+  published: '2020-03-30'
+  official: true
+  official_basis: >-
+    npm repository field points at github.com/vipkid-edu/vf-gui, VIPKid's education
+    engineering GitHub organization (the org itself now 404s).
+  license: ISC
+  kind: interactive-courseware engine
+  api_client: false
+  note: VF interactive-content engine used for VIPKid's live classroom courseware.
+- name: pixi-vfui
+  registry: npm
+  url: https://www.npmjs.com/package/pixi-vfui
+  version: 0.5.0
+  published: '2019-11-04'
+  official: true
+  official_basis: repository github.com/vipkid-edu/pixi-vfui
+  license: ISC
+  kind: Pixi.js UI component library
+  api_client: false
+- name: '@vf.js/vue'
+  registry: npm
+  url: https://www.npmjs.com/package/@vf.js/vue
+  version: 1.1.9
+  published: '2020-05-14'
+  official: true
+  official_basis: repository github.com/vipkid-edu/vf-vue
+  license: ISC
+  kind: Vue binding for the VF engine
+  api_client: false
+- name: '@vf.js/react'
+  registry: npm
+  url: https://www.npmjs.com/package/@vf.js/react
+  version: 1.0.1
+  published: '2020-04-22'
+  official: true
+  official_basis: >-
+    same npm maintainer set (ifyx, 8088) as the vipkid-edu-hosted @vf.js/vue; no
+    repository field is declared on the package.
+  license: ISC
+  kind: React binding for the VF engine
+  api_client: false
+- name: '@vf.js/cli'
+  registry: npm
+  url: https://www.npmjs.com/package/@vf.js/cli
+  version: 1.1.11
+  published: '2020-06-08'
+  official: true
+  official_basis: same npm maintainer set as @vf.js/vue
+  license: ISC
+  kind: build CLI that emits VF engine JSON
+  api_client: false
+- name: vf-cli
+  registry: npm
+  url: https://www.npmjs.com/package/vf-cli
+  version: 1.1.4
+  published: '2020-03-26'
+  official: false
+  official_basis: >-
+    describes itself as the VF-CLI but is published by an unrelated maintainer
+    (haojenma) with no repository link — treated as unverified, superseded by @vf.js/cli.
+  license: ISC
+  kind: build CLI
+  api_client: false
+- name: vk-track
+  registry: npm
+  url: https://www.npmjs.com/package/vk-track
+  version: 2.1.1
+  published: '2019-03-27'
+  official: true
+  official_basis: >-
+    repository field is ssh://git@code.vipkid.com.cn:3590/vfe/parent/vk-track.git —
+    VIPKid's own internal GitLab host.
+  license: ISC
+  kind: front-end analytics/eventing helper
+  api_client: false
+- name: vk-appbridge
+  registry: npm
+  url: https://www.npmjs.com/package/vk-appbridge
+  version: 1.3.2
+  published: '2018-12-03'
+  official: true
+  official_basis: >-
+    "@copyright VIPKID" in the sibling test-appbridge package by the same maintainer
+    (super-mouse); no repository field.
+  license: ISC
+  kind: webview-to-native bridge for the VIPKid apps
+  api_client: false
+- name: vk-log
+  registry: npm
+  url: https://www.npmjs.com/package/vk-log
+  version: 1.0.5
+  published: '2018-12-03'
+  official: true
+  official_basis: >-
+    published alongside vk-appbridge/vk-track as part of the same VIPKid front-end
+    toolchain; no repository field.
+  license: ISC
+  kind: front-end error/logging helper
+  api_client: false
+- name: test-appbridge
+  registry: npm
+  url: https://www.npmjs.com/package/test-appbridge
+  version: 1.0.10
+  published: '2018-11-19'
+  official: true
+  official_basis: package description reads "@copyright VIPKID"
+  license: ISC
+  kind: test build of the app bridge
+  api_client: false
+- name: vipkid-ms-uploader
+  registry: npm
+  url: https://www.npmjs.com/package/vipkid-ms-uploader
+  version: 1.2.0
+  published: '2019-03-23'
+  official: true
+  official_basis: >-
+    description "向媒资中心上传媒体文件的js工具包" — an uploader for VIPKid's own media-asset
+    centre; no repository field.
+  license: ISC
+  kind: media upload helper
+  api_client: false
+- name: vipkid-vue-uploader
+  registry: npm
+  url: https://www.npmjs.com/package/vipkid-vue-uploader
+  version: 0.1.7
+  published: '2019-03-23'
+  official: true
+  official_basis: same maintainer (hecool108) and release date as vipkid-ms-uploader
+  license: null
+  kind: Vue upload component
+  api_client: false
+- name: vipkid-ui
+  registry: npm
+  url: https://www.npmjs.com/package/vipkid-ui
+  version: 1.0.0
+  published: '2019-04-01'
+  official: false
+  official_basis: >-
+    "vipkid-ui, a vue 2.0 based component library" from an unrelated maintainer, and
+    two identical clones (gys-ui, gys1-ui) were published by the same account the next
+    day — reads as a scaffold, not a VIPKid release. Unverified.
+  license: null
+  kind: Vue component library
+  api_client: false
+- name: evaluater-vkm-wx-public
+  registry: npm
+  url: https://www.npmjs.com/package/evaluater-vkm-wx-public
+  version: 0.0.41
+  published: '2021-07-17'
+  official: true
+  official_basis: >-
+    repository ssh://git@code.vipkid.com.cn:3590/jiaziling/evaluater-PublicSDK.git —
+    VIPKid's internal GitLab; "Provider evaluater function for vipkid client app".
+  license: MIT
+  kind: speech/pronunciation evaluation helper for the client app
+  api_client: false
+  note: >-
+    The newest first-party VIPKid package on any registry. Its release date sits three
+    days before China's 2021 "double reduction" policy landed on private tutoring.
+- name: KIDDNS-Android
+  registry: github
+  url: https://github.com/VIPKID-OpenSource/KIDDNS-Android
+  version: v.1.0.1
+  published: '2018-12-12'
+  official: true
+  official_basis: published by the VIPKID-OpenSource GitHub organization
+  license: MIT
+  kind: HTTPDNS client for Android
+  api_client: false
+  note: >-
+    Distributed from GitHub releases only; no Maven Central or JitPack coordinate is
+    published, so there is no package-registry metadata endpoint to query — the version
+    and date are read from the GitHub release.
+- name: KIDDNS-iOS
+  registry: github
+  url: https://github.com/VIPKID-OpenSource/KIDDNS-iOS
+  version: 1.0.0
+  published: '2018-11-09'
+  official: true
+  official_basis: published by the VIPKID-OpenSource GitHub organization
+  license: MIT
+  kind: HTTPDNS client for iOS
+  api_client: false
+  note: >-
+    Intended for a private CocoaPods spec repo (VIPKID-OpenSource/Specs). trunk.cocoapods.org
+    returns 404 for pod "KIDDNS", so it was never pushed to the public CocoaPods trunk;
+    version is the git tag, dated from the repository's last push.
+checked_and_empty:
+- registry: pypi
+  query: https://pypi.org/pypi/vipkid/json
+  status: 404
+- registry: cocoapods
+  query: https://trunk.cocoapods.org/api/v1/pods/KIDDNS
+  status: 404
+- registry: rubygems
+  note: no VIPKid-published gem
+- registry: crates.io
+  note: no VIPKid-published crate
+- registry: nuget
+  note: no VIPKid-published package
+- registry: maven-central
+  note: no VIPKid group coordinate
+- registry: pkg.go.dev
+  note: no VIPKid module
